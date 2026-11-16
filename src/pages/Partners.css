@@ -1,0 +1,208 @@
+.partners-page {
+  padding-top: 0;
+}
+
+.partners-hero {
+  position: relative;
+  min-height: 72vh;
+  display: grid;
+  align-items: end;
+  color: var(--sand);
+  overflow: hidden;
+}
+
+.partners-hero-media {
+  position: absolute;
+  inset: 0;
+}
+
+.partners-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: kenburns 16s ease-out forwards;
+}
+
+.partners-wash {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 38, 31, 0.4) 0%,
+    rgba(14, 38, 31, 0.78) 100%
+  );
+}
+
+.partners-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 7rem 0 3.5rem;
+  max-width: 40rem;
+  animation: fade-up 0.9s var(--ease) both;
+}
+
+.partners-brand {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 0.85rem;
+}
+
+.partners-hero h1 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 500;
+  margin-bottom: 0.9rem;
+  max-width: 18ch;
+}
+
+.partners-hero-content > p {
+  color: rgba(240, 230, 216, 0.84);
+  max-width: 34rem;
+}
+
+.benefits {
+  background: var(--cloud);
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+}
+
+.benefit-grid article {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.benefit-grid span {
+  font-family: var(--font-display);
+  color: var(--copper);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+}
+
+.benefit-grid h3 {
+  font-size: 1.4rem;
+  margin: 0.55rem 0 0.55rem;
+}
+
+.benefit-grid p {
+  color: var(--muted);
+}
+
+.apply {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(201, 151, 74, 0.12), transparent 40%),
+    var(--mist);
+}
+
+.apply-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+.apply h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 0.85rem;
+}
+
+.apply > .container > .reveal > p,
+.apply-layout > .reveal > p {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  max-width: 30rem;
+}
+
+.apply-points {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.apply-points li {
+  padding-left: 1.1rem;
+  position: relative;
+  color: var(--ink);
+}
+
+.apply-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--forest);
+}
+
+.apply-form-wrap {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.apply-form {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.apply-form .field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.apply-form label {
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.apply-form input,
+.apply-form select,
+.apply-form textarea {
+  width: 100%;
+  padding: 0.85rem 0.95rem;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--cloud);
+  font-weight: 400;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.apply-form input:focus,
+.apply-form select:focus,
+.apply-form textarea:focus {
+  outline: none;
+  border-color: var(--forest);
+  background: var(--white);
+}
+
+.apply-form .btn {
+  justify-self: start;
+}
+
+.apply-success h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.apply-success p {
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+}
+
+@media (max-width: 860px) {
+  .benefit-grid,
+  .apply-layout,
+  .apply-form .field-row {
+    grid-template-columns: 1fr;
+  }
+}

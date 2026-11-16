@@ -1,0 +1,150 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  padding: 1.1rem 0;
+  transition: background 0.35s var(--ease), backdrop-filter 0.35s var(--ease),
+    padding 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.nav-solid {
+  background: rgba(243, 247, 245, 0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--line);
+  padding: 0.75rem 0;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--sand);
+  z-index: 2;
+}
+
+.nav-solid .logo {
+  color: var(--forest);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-links a:not(.btn) {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(240, 230, 216, 0.88);
+  transition: color 0.25s ease;
+}
+
+.nav-solid .nav-links a:not(.btn) {
+  color: var(--muted);
+}
+
+.nav-links a:not(.btn):hover,
+.nav-links a.active {
+  color: var(--sand);
+}
+
+.nav-solid .nav-links a:not(.btn):hover,
+.nav-solid .nav-links a.active {
+  color: var(--forest);
+}
+
+.nav-cta {
+  padding: 0.7rem 1.15rem;
+  font-size: 0.9rem;
+}
+
+.nav-solid .nav-cta {
+  background: var(--forest);
+  color: var(--sand);
+}
+
+.nav-toggle {
+  display: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-toggle span {
+  position: absolute;
+  left: 0.45rem;
+  right: 0.45rem;
+  height: 2px;
+  background: var(--sand);
+  transition: transform 0.3s var(--ease), top 0.3s var(--ease),
+    background 0.3s ease;
+}
+
+.nav-solid .nav-toggle span {
+  background: var(--forest);
+}
+
+.nav-toggle span:first-child {
+  top: 0.9rem;
+}
+
+.nav-toggle span:last-child {
+  top: 1.35rem;
+}
+
+.nav-toggle.open span {
+  background: var(--forest);
+}
+
+.nav-toggle.open span:first-child {
+  top: 1.15rem;
+  transform: rotate(45deg);
+}
+
+.nav-toggle.open span:last-child {
+  top: 1.15rem;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--cloud);
+    gap: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s var(--ease);
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a:not(.btn),
+  .nav-solid .nav-links a:not(.btn) {
+    color: var(--forest);
+    font-size: 1.35rem;
+    font-family: var(--font-display);
+  }
+
+  .nav-cta {
+    margin-top: 0.5rem;
+  }
+}

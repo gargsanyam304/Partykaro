@@ -1,0 +1,153 @@
+.book-page {
+  padding-top: 4.5rem;
+}
+
+.book-hero {
+  padding: clamp(3rem, 8vw, 5rem) 0 2rem;
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(197, 213, 204, 0.8), transparent 50%),
+    var(--cloud);
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--copper);
+  margin-bottom: 0.85rem;
+}
+
+.book-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  max-width: 14ch;
+  margin-bottom: 0.9rem;
+}
+
+.book-hero p {
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.book-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+.book-aside h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.book-aside ol {
+  display: grid;
+  gap: 1rem;
+  counter-reset: step;
+  margin-bottom: 2rem;
+}
+
+.book-aside li {
+  counter-increment: step;
+  padding-left: 2.4rem;
+  position: relative;
+  color: var(--muted);
+}
+
+.book-aside li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.aside-note {
+  padding: 1.25rem;
+  background: var(--mist);
+  border-radius: var(--radius);
+}
+
+.aside-note strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.aside-note p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.book-form-wrap {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.book-form {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.book-form label {
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.book-form input,
+.book-form select,
+.book-form textarea {
+  width: 100%;
+  padding: 0.85rem 0.95rem;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--cloud);
+  font-weight: 400;
+  color: var(--ink);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.book-form input:focus,
+.book-form select:focus,
+.book-form textarea:focus {
+  outline: none;
+  border-color: var(--forest);
+  background: var(--white);
+}
+
+.book-form .btn {
+  justify-self: start;
+  margin-top: 0.35rem;
+}
+
+.book-success h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.book-success p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  max-width: 36rem;
+}
+
+@media (max-width: 860px) {
+  .book-layout,
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}
